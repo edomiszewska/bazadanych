@@ -76,8 +76,11 @@ select * from platnosci where klient like '%MARIO%'
 tabela world zadanie 
 
 1)
-select countrylanguage.Language, country.code
+create view dane as
+select countrylanguage.Language, country.code,country.continent, country.population
 from `countrylanguage`
 join country
 on country.Code=countrylanguage.CountryCode
-where country.Code="AFG";
+where country.Code="AFG" or country.population>30000;
+
+2)  
