@@ -34,7 +34,13 @@ select
 id as numer,
 name as nazwa,
 countrycode as kodkraju,
-district as dystrykt,
+district as dystrykt, 
 population as populacja
 from city;
 
+
+
+
+set @nr := 0;
+
+select @nr :=@nr+1, PKB, Kraj, DlugoscZycia from world.pozycjapkb;
