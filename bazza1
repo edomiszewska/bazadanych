@@ -1,6 +1,8 @@
 ==DEFINICJA==
 Widoki to zapytania do bazy danych, zapisywane pod jakąś nazwą.
 
+===============================================================
+Create view PozycjaPKB as
 select
 GNP As PKB,
 Name As Kraj,
@@ -9,4 +11,30 @@ Population As Populacja,
 SurfaceArea As Powierzchnia,
 LifeExpectancy As DlugoscZycia
 from 
-country;
+country
+order by PKB DESC;
+
+===============================================================
+
+select * from world.pozycjapkb;
+
+select PKB, Kraj from world.pozycjapkb;
+
+
+create view jezyki as
+select 
+countrycode as kodkraju,
+language as jezyk,
+isofficial as czyurzedowy,
+percentage as procenty
+from countrylanguage;
+
+create view miasta as
+select
+id as numer,
+name as nazwa,
+countrycode as kodkraju,
+district as dystrykt,
+population as populacja
+from city;
+
