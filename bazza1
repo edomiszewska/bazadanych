@@ -92,3 +92,18 @@ BEGIN
 select * from world.country;
 end $$
 delimiter ;
+====================================================
+delimiter $$
+create procedure kraj(in kod  varchar(3))
+begin
+select concat(name, continent, region) from country where code = kod;
+end $$
+delimiter ;
+====================================================
+drop procedure if exists kraj;
+delimiter $$
+create procedure kraj(in kod  varchar(3), out wyjscie text)
+begin
+select concat(name, ' ', continent,' ', region) from country where code = kod;
+end $$
+delimiter ;
