@@ -38,9 +38,46 @@ district as dystrykt,
 population as populacja
 from city;
 
-
-
-
+============
 set @nr := 0;
 
 select @nr :=@nr+1, PKB, Kraj, DlugoscZycia from world.pozycjapkb;
+
+============
+set @nr := 0;
+select @nr :=@nr+1 as pozycja, pkb, kraj, dlugosczycia from world.pozycjapkb;
+
+select * from jezyki where kodkraju="AFG" and czyurzedowy="T";
+
+
+============
+SAKILA
+
+create view platnosci as
+select 
+concat(c.first_name, ' ', c.last_name) as klient,
+sum(p.amount) as zaplacil,
+avg(p.amount) as srednia
+from
+payment as p, customer as c
+where
+c.customer_id = p.customer_id
+group by
+c.customer_id
+order by zaplacil desc;
+
+
+
+select * from platnosci where klient = 'Mary Smith';
+select * from platnosci where klient like '%MARIO%'
+
+
+====================================================
+tabela world zadanie 
+
+1)
+select countrylanguage.Language, country.code
+from `countrylanguage`
+join country
+on country.Code=countrylanguage.CountryCode
+where country.Code="AFG";
