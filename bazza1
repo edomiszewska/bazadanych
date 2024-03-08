@@ -1,0 +1,12 @@
+==DEFINICJA==
+Widoki to zapytania do bazy danych, zapisywane pod jakąś nazwą.
+
+select
+GNP As PKB,
+Name As Kraj,
+Continent As Kontynent,
+Population As Populacja,
+SurfaceArea As Powierzchnia,
+LifeExpectancy As DlugoscZycia
+from 
+country;
