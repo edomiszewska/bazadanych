@@ -84,3 +84,11 @@ on country.Code=countrylanguage.CountryCode
 where country.Code="AFG" or country.population>30000;
 
 2)  
+
+====================================================
+delimiter $$
+create procedure panstwa()
+BEGIN
+select * from world.country;
+end $$
+delimiter ;
