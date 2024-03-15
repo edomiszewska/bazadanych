@@ -143,3 +143,5 @@ return concat ('witaj', imie, 'na zajeciach p.nierodki sql');
 end
 $$
 delimiter ;
+
+
