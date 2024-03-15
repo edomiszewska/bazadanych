@@ -107,3 +107,16 @@ begin
 select concat(name, ' ', continent,' ', region) from country where code = kod;
 end $$
 delimiter ;
+
+
+=============================
+15 marca
+=============================
+
+drop PROCEDURE if EXISTS Kraj;
+DELIMITER $$
+CREATE PROCEDURE kraj(in kod varchar(3), out wyjscie text)
+BEGIN
+SELECT concat(name, ' ', continent, ' ', region) from country where code=kod;
+end $$
+DELIMITER ;
