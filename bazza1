@@ -1,4 +1,4 @@
-==DEFINICJA==
+ ==DEFINICJA==
 Widoki to zapytania do bazy danych, zapisywane pod jakąś nazwą.
 
 ===============================================================
@@ -120,3 +120,26 @@ BEGIN
 SELECT concat(name, ' ', continent, ' ', region) from country where code=kod;
 end $$
 DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE FUNCTION witaj()
+RETURNS text
+deterministic
+begin
+return 'Witaj na zajeciach P. Nierodki SQL';
+end
+$$
+DELIMITER ;
+
+
+delimiter $$
+create function witajUczniu (imie VARCHAR(20))
+returns text
+deterministic
+begin
+return concat ('witaj', imie, 'na zajeciach p.nierodki sql');
+end
+$$
+delimiter ;
